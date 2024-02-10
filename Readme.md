@@ -5,6 +5,8 @@
   * Убедиться, что репозиторий связан: __git remote -v__
   * Первый push: __git push -u origin main/master__
   * Вывод короткого лога: __git log --oneline__
+  * Дополнить коммит новыми файлами: __git commit --amend --no-edit__
+  * Изменить сообщение коммита: __git commit --amend -m "Новое сообщение"__
 
   
   - __javac -d bin -encoding UTF-8 src/*.java__
@@ -50,3 +52,13 @@
     1. untracked/tracked (git add)
     2. staged (modified + git add)
     3. modified (если tracked изменен)
+
+## Как исправить коммит
+
+### Дополнить коммит новыми файлами — git commit --amend --no-edit
+
+С опцией --amend команда commit не создаст новый коммит, а дополнит последний
+
+Опция --no-edit сообщает команде commit, что сообщение коммита нужно оставить как было.
+
+### Изменить сообщение коммита — git commit --amend -m "Новое сообщение"
