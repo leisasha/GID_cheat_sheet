@@ -1,14 +1,17 @@
 # GIT Cheat sheet for me
 
-
+### GIT
   * Привязать уделенный репозиторий к локальному: __git remote add origin <link>__
   * Убедиться, что репозиторий связан: __git remote -v__
   * Первый push: __git push -u origin main/master__
   * Вывод короткого лога: __git log --oneline__
   * Дополнить коммит новыми файлами: __git commit --amend --no-edit__
   * Изменить сообщение коммита: __git commit --amend -m "Новое сообщение"__
+  * Убрать файл из staging: __git restore --staged "fileName"__
+  * «Откатить» коммит: __git reset --hard "commit_hash"__
+  * Просмотр изменений: __git diff (git diff --staged или git diff "hash1" "hash2")__
 
-  
+### JAVA
   - __javac -d bin -encoding UTF-8 src/*.java__
   - __jar cfe library.jar Practicum -C bin .__
 
@@ -62,3 +65,19 @@
 Опция --no-edit сообщает команде commit, что сообщение коммита нужно оставить как было.
 
 ### Изменить сообщение коммита — git commit --amend -m "Новое сообщение"
+
+## Как откатиться назад, если «всё сломалось»
+
+### Убрать файл из staging поможет команда git restore --staged "fileName" (от англ. restore — «восстановить»).
+
+### «Откатить» коммит — git reset --hard "commit_hash"
+
+    head coomit при этот удаляется
+
+### «Откатить» изменения, которые не попали ни в staging, ни в коммит, — git restore "file"
+
+    Изменения в файле «откатятся» до последней версии, которая была сохранена через git commit или git add
+
+### git diff
+    Эта команда сравнит последнюю закоммиченную версию файла с текущей (изменённой) версией в modified файле
+    Чтобы всё-таки просмотреть изменения в staged, нужно использовать флаг --staged: git diff --staged.
